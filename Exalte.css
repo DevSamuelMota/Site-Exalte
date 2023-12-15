@@ -1,0 +1,237 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+.background {
+  background-image: url(img/Background.Exalte.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  width: 100%;
+  max-width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(#721313, #721313);
+  z-index: -1;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 1rem;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  position: fixed;
+  transition: all .35s ease;
+  background-color: #721313;
+  padding: 14px 14%;
+}
+
+.logo {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.cabeçalho-link {
+  display: flex;
+  gap: 3rem;
+  float: left;
+  width: 55%;
+}
+
+.cabeçalho-link a {
+  color: white;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.cabeçalho-link a:hover {
+  color: #c8815f;
+}
+
+.icon span {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.icon span:hover {
+  color: #c8815f;
+}
+
+section {
+  padding-top: 7rem;
+}
+
+section h1 {
+  align-items: center;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.container-card-1 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-top: 2rem;
+}
+
+.cards img {
+  width: 450px;
+  height: auto;
+  transition: 0.35s ease;
+}
+
+.cards img:hover {
+  transform: scale(0.9) translateY(5px);
+  cursor: pointer;
+}
+
+.cta {
+  background: url(img/Lingerie.png);
+  background-position: center;
+  background-size: cover;
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.text-cta {
+  padding-left: 5rem;
+}
+
+.text-cta h6 {
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 6px;
+  margin-bottom: 14px;
+}
+
+.text-cta h4 {
+  font-size: 3.3rem;
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+
+.text-cta a {
+  background-color: #c8815f;
+  padding: 1rem 3rem 1rem 3rem;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.text-cta a:hover {
+  background-color: #111;
+  transform: scale(1.2);
+}
+
+.container-roupas {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  text-align: center;
+  margin-top: 3rem;
+  position: relative;
+}
+
+.container-roupas img:hover {
+  transform: scale(0.9) translateY(5px);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.roupa {
+  background-color: #c8815f;
+  color: #fff;
+}
+
+.roupa img {
+  width: 250px;
+  height: auto;
+  min-width: 100%;
+  transition: transform 0.5s ease;
+}
+
+footer img {
+  width: 40px;
+  height: 40px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+}
+
+footer a {
+  margin: 30px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+footer a:hover {
+  transform: scale(1.1);
+}
+
+footer p {
+  margin-top: 2px;
+}
+
+button {
+  font-size: 24px;
+  margin-top: 20px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #c8815f;
+}
+#carousel-container {
+  opacity: 1;
+}
+/* Adicione a classe hidden ao container-roupas */
+#carousel-container.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Adicione essas regras para controlar a visibilidade das setas */
+.carousel-prev,
+.carousel-next {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-prev.hidden,
+.carousel-next.hidden {
+  opacity: 0;
+  pointer-events: none;
+}

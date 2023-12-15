@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Exalte.css">
+  <title>E-commerce</title>
+</head>
+<body>
+<div class="background">
+<header>
+<div class="logo">
+</div><!--logo-->
+<div class="cabeçalho-link">
+<li>
+<a href="#">Início</a>
+</li>
+<li>
+<a href="#">Destaque</a>
+</li>
+<li>
+<a href="#">Novo</a>
+</li>
+<li>
+<a href="#">Contato</a>
+</li>
+<div class="icon"><span><ion-icon name="bag-outline"></ion-icon></span></div>
+
+</div><!--cabeçalho-link-->
+</header>
+
+
+</div><!--background-->
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<section>
+<h1>NOVAS CATEGORIAS</h1>
+<div class="container-card-1">
+  <div class="cards">
+    <img src="img/Moda_íntima.png" alt="" style="width: 100%;">
+</div><!--cards-->
+<div class="cards">
+<img src="img/Moda_íntima.2.png" alt="" style="width: 100%;">
+</div><!--cards-->
+<div class="cards">
+  <img src="img/Moda_íntima.3.png" alt="" style="width: 100%;">
+  </div><!--cards-->
+  <div class="cards">
+    <img src="img/Moda_íntima.4.png" alt="" style="width: 100%;">
+    </div><!--cards-->
+</div><!--Container-card-1-->
+</section>
+
+<section class="cta">
+<div class="text-cta">
+<h6>Verão a venda</h6>
+<h4>20% OFF<br>DE DESCONTO A VISTA</h4>
+<a href="#" class="btn">Compre Agora</a>
+</div><!--tax-cta-->
+
+</section><!--cta-->
+
+<section>
+  <h1>ESTOQUES NOVOS</h1>
+
+  <section>
+    <div class="container-roupas" id="carousel-container" class="hidden">
+      <button class="carousel-prev">&#9665;</button>
+      <div class="roupa">
+        <img src="img/Babydool.png" alt="">
+        <p>Baby Doll Estilo Tendência</p>
+        <h5>R$31,99</h5>
+        <ion-icon name="cart-outline"></ion-icon>
+      </div><!--roupa-->
+      <div class="roupa">
+        <img src="img/Babydoll.2.png" alt="">
+        <p>Baby Doll Totalmente Sem Renda</p>
+        <h5>R$29,99</h5>
+        <ion-icon name="cart-outline"></ion-icon>
+      </div><!--roupa-->
+      <div class="roupa">
+        <img src="img/babydoll.3.png" alt="">
+        <p>Baby Doll verbe bebê</p>
+        <h5>R$28,00</h5>
+        <ion-icon name="cart-outline"></ion-icon>
+      </div><!--roupa-->
+      <div class="roupa">
+        <img src="img/Camisola.2.png" alt="">
+        <p>Camisola Vermelho</p>
+        <h5>R$28,00</h5>
+        <ion-icon name="cart-outline"></ion-icon>
+      </div><!--roupa-->
+      <button class="carousel-next">&#9655;</button>
+      
+    </div><!--container-roupas-->
+
+    <script>
+tainer = document.getElementById('carousel-container');
+const roupas = document.querySelectorAll('.roupa');
+const btnPrev = document.querySelector('.carousel-prev');
+const btnNext = document.querySelector('.carousel-next');
+let currentIndex = 0;
+
+function updateCarousel() {
+  const displacement = -currentIndex * 100 + '%';
+  container.style.transition = 'transform 0.5s ease-in-out';
+  container.style.transform = 'translateX(' + displacement + ')';
+}
+
+btnNext.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % roupas.length;
+  updateCarousel();
+});
+
+btnPrev.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + roupas.length) % roupas.length;
+  updateCarousel();
+});
+
+container.addEventListener('transitionend', () => {
+  if (currentIndex === 0) {
+    container.style.transition = 'none';
+    container.style.transform = 'translateX(' + (-100 * roupas.length + '%') + ')';
+    setTimeout(() => {
+      container.style.transition = 'transform 0.5s ease-in-out';
+    }, 50);
+  } else if (currentIndex === roupas.length - 1) {
+    container.style.transition = 'none';
+    container.style.transform = 'translateX(0)';
+    setTimeout(() => {
+      container.style.transition = 'transform 0.5s ease-in-out';
+    }, 50);
+  }
+});
+
+container.addEventListener('mouseover', () => {
+  container.style.transition = 'none';
+});
+
+container.addEventListener('mouseout', () => {
+  container.style.transition = 'transform 0.5s ease-in-out';
+});
+
+// Adicionando intervalo para criar o loop
+let intervalId;
+
+function startInterval() {
+  intervalId = setInterval(() => {
+    currentIndex = (currentIndex + 1) % roupas.length;
+    updateCarousel();
+  }, 3000); // Tempo em milissegundos (3 segundos)
+}
+
+startInterval();
+
+// Remover o intervalo quando o mouse estiver sobre as imagens
+container.addEventListener('mouseover', () => {
+  clearInterval(intervalId);
+});
+
+// Reiniciar o intervalo quando o mouse sair das imagens
+container.addEventListener('mouseout', () => {
+  startInterval();
+});
+
+    </script>
+  </section>
+  
+<footer>
+<a href="https://www.instagram.com/lingerieexalteeusebio/" target="_blank" rel="noopener noreferrer">
+<img src="img/Instagram_logo_2016.webp" ></img>
+<p>Instagram</p>
+</a>  
+<a href="https://github.com/DevSamuelMota/DevSamuelMota" target="_blank" rel="noopener noreferrer">
+<img src="img/Wathsapp.png"></img>
+<p>Wathsapp</p>
+</a>
+</footer>
+
+<p>©️ Copyright Direitos a Exalte Lingerie</p><!--Direitos Reservados-->
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
